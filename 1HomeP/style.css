@@ -6,7 +6,7 @@ body {
 }
 
 /* 헤더 스타일 */
-.header {
+header {
     display: flex;
     padding: 40px;
     align-items: center;
@@ -34,32 +34,45 @@ body {
 }
 
 /* 네비게이션 바 스타일 */
-.nav-bar {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    background-color: #000;
-    color: #e7e7e7;
-    font-size: 18px;
-    font-weight: bold;
-}
-
+    nav {
+        padding: 10px;
+        background-color: #131313;
+    }
+    
+    nav ul {
+        display: flex; /* 가로 정렬 */
+        justify-content: space-around; /* 항목 간 간격 조정 */
+        list-style: none; /* 점 없애기!! */
+        padding: 0; /* 기본 패딩 제거 */
+        margin: 0; /* 기본 마진진 제거 */
+    }
+    
+    nav li {
+        color: #e7e7e7;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer; /* 메뉴처럼 포인터 표시 */
+    }
+    
+    nav li:hover {
+        color: rgb(249, 255, 80);
+    }
 /* 내용 스타일 */
 .content {
     padding: 40px;
     background-color: #eeeeee;
 }
 
-.section {
+section {
     margin-bottom: 30px;
 }
 
-.section h2 {
+section h2 {
     margin-bottom: 15px;
     font-size: 20px;
     border-bottom: 2px solid #000;
 }
 
-.section p {
+section p {
     font-size: 16px;
 }
