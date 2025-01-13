@@ -9,25 +9,25 @@
 
 <body>
 <header>
-    <div class="game-container">
-        <div class="game-name">
+    <div class="container">
+        <section class="top-bar">
             Minesweeper
             <div class="exit-group">
                 <div class="exit">➖</div>
                 <div class="exit">🔲</div>
                 <div class="exit">❌</div>
             </div>
-        </div>
+        </section>
 
         <!-- 점수판과 얼굴 버튼 -->
-        <div class="top-bar">
+        <section class="middle-bar">
             <div class="score-display" id="mines-count">020</div>
-            <button class="reset-button">😊</button>
+            <button id="reset-button">😊</button>
             <div class="score-display" id="timer">120</div>
-        </div>
+        </section>
 
         <!-- 지뢰찾기 게임판 -->
-        <div class="minesweeper">
+        <section class="minesweeper">
             <div class="row">
                 <div class="cell"></div>
                 <div class="cell"></div>
@@ -76,7 +76,7 @@
                 <div class="cell"></div>
                 <div class="cell"></div>
             </div>
-        </div>
+        </section>
     </div>
 </div>
 </header>
