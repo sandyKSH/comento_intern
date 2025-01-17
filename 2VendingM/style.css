@@ -19,7 +19,8 @@ body {
   .top-bar {
     display: flex;
     align-items: center; 
-    justify-content; /*위 3줄이 없어도 계속 왼쪽정렬인 이유??*/
+    justify-content; 
+    /*Q1. 위 3줄이 있든 없든 'ChilSung-Cider'가 계속 왼쪽정렬인 이유?*/
     width:100%;
     background-color: #2530a3;
     color:#e1e1e1;
@@ -30,7 +31,8 @@ body {
   .drink-container{
     display: grid;
     justify-content: center;
-    align-items: center;/*위 두줄이 없어도 결과가 똑같은 이유*/
+    align-items: center;
+    /*Q2. 위 두줄이 없어도 결과가 똑같은 이유*/
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 4px;
@@ -62,7 +64,8 @@ body {
   /* 결제 칸 */
   .payment {
     display: flex;
-    justify-content: flex-end;    background-color: #e1e1e1;
+    justify-content: flex-end;    
+    background-color: #e1e1e1;
     border-radius: 4px;
     box-sizing: border-box;
   }
@@ -76,7 +79,9 @@ body {
     height: 3.5px;
     margin: 20px;
     padding: 1px;
-    font-size: 9px;
+    font-size: 9px; 
+    /* Q3. 글씨와 카드 투입구간의 간격을 조절하고 싶을 때는, 그 둘을 div로 분리해서 margin을 조정하는 방법밖에 없겠죠?*/
+    text-align: center;
     background-color: #b0b0b0;
     border-radius: 1px;
     font-size: 9px;
