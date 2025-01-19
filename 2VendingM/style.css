@@ -18,9 +18,8 @@ body {
   /* 상단 바 */
   .top-bar {
     display: flex;
-    align-items: center; 
-    justify-content; 
-    /*Q1. 위 3줄이 있든 없든 'ChilSung-Cider'가 계속 왼쪽정렬인 이유?*/
+    align-items: center;
+    justify-content: center;/*1.가운데 정렬 성공공*/
     width:100%;
     background-color: #2530a3;
     color:#e1e1e1;
@@ -29,10 +28,7 @@ body {
   }
   /* 음료 선택 */
   .drink-container{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    /*Q2. 위 두줄이 없어도 결과가 똑같은 이유*/
+    display: grid; /*2. body에 justify-content랑 align-items가 있기 때문에 큰 덩어리도 가운데 정렬임*/
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 4px;
@@ -80,11 +76,10 @@ body {
     margin: 20px;
     padding: 1px;
     font-size: 9px; 
-    /* Q3. 글씨와 카드 투입구간의 간격을 조절하고 싶을 때는, 그 둘을 div로 분리해서 margin을 조정하는 방법밖에 없겠죠?*/
+    /* 3. 글씨와 카드 투입구간의 간격을 조절하고 싶을 때는, 그 둘을 div로 분리해서 margin을 조정하는 방법 + ::before을 쓰는 방법이 있으나 추가 공부 필요할 듯*/
     text-align: center;
     background-color: #b0b0b0;
     border-radius: 1px;
-    font-size: 9px;
     cursor: pointer;
   }
   .card-hole:hover{
