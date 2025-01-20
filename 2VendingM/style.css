@@ -19,7 +19,7 @@ body {
   .top-bar {
     display: flex;
     align-items: center;
-    justify-content: center;/*1.가운데 정렬 성공공*/
+    justify-content: center;/*1.가운데 정렬 성공*/
     width:100%;
     background-color: #2530a3;
     color:#e1e1e1;
