@@ -10,17 +10,19 @@
     <div class="calculator">
         <!-- 출력 및 입력 영역 -->
         <div class="display">
-            <div id="output">입력창</div>
+            <!-- 연산식 표시 -->
+            <div id="equation"></div>
+            <!-- 결과 표시 -->
+            <div id="output">0</div>
         </div>
         <!-- 지우기 버튼 -->
         <div class="tools">
             <div class="extra-buttons">
                 <button class="btn tool">🕒</button>
-                <button class="btn tool">📏</button>
+                <button class="btn tool">e</button>
                 <button class="btn tool">π</button>
             </div>
-            <button class="btn backspace">⌫
-            </button>
+            <button class="btn backspace">⌫</button>
         </div>
         <!-- 버튼 파트 -->
         <div class="buttons">
@@ -46,5 +48,6 @@
             <button class="btn equal">=</button>
         </div>
     </div>
+    <script src="func.js"></script>
 </body>
 </html>

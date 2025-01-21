@@ -23,20 +23,36 @@ body {
     background: #f9f9f9;
     color: #333;
     text-align: right;
-    padding: 20px;
+    padding: 10px 20px;
     font-size: 1.8em;
     border-bottom: 1.5px solid #ddd;
-    height: 80px;
+    height: 100px;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#equation {
+    font-size: 1em;
+    color: #888; /* 연산식은 약간 흐리게 표시 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#output {
+    font-size: 1.8em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .tools {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;/*위아래, 왼오*/
+    padding: 10px 20px;
 }
 
 .extra-buttons {
@@ -76,11 +92,11 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 11px; /*전체 크기가 변하는 이유*/
+    gap: 11px;
     padding: 20px;
 }
 
-.btn { /*이 키워드가 들어간 파트는 다 적용되는 걸까요*/
+.btn {
     height: 62px;
     font-size: 1.8em;
     font-weight: 550;
