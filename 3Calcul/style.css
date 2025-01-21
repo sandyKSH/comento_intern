@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e2f7db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    width: 360px;
+    background: #fff;
+    border: 10px ridge #868686;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    background: #f9f9f9;
+    color: #333;
+    text-align: right;
+    padding: 20px;
+    font-size: 1.8em;
+    border-bottom: 1.5px solid #ddd;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;/*위아래, 왼오*/
+}
+
+.extra-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn.tool {
+    background: #e0e0e0;
+    color: #333;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn.backspace {
+    background: #e0e0e0;
+    color: #333;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn.backspace:hover,
+.btn.tool:hover {
+    background: #d5d5d5;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 11px; /*전체 크기가 변하는 이유*/
+    padding: 20px;
+}
+
+.btn { /*이 키워드가 들어간 파트는 다 적용되는 걸까요*/
+    height: 62px;
+    font-size: 1.8em;
+    font-weight: 550;
+    border: none;
+    border-radius: 32%;
+    background: #f1f3f5;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e0e0e0;
+}
+
+.btn.operator {
+    background: #eee6f4;
+    color: #823dab;
+    font-size: 1.2em;
+}
+
+.btn.operator:hover {
+    background: #d9bdea;
+}
+
+.btn.equal {
+    background: #b165eb;
+    color: white;
+    font-weight: 540;
+}
+
+.btn.equal:hover {
+    background: #9a1cee;
+}
+
+.btn.clear {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.btn.clear:hover {
+    background: #ffcdd2;
+}
