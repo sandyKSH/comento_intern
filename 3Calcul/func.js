@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } else if (value === "=") {
                 // '=' 버튼 처리 (결과 계산)
-                if (currentInput !== "") { //????? 식이 괄호로 끝났을 때 무반응응
+                if (currentInput !== "") { //Q. 식이 괄호로 끝났을 때 무반응인 이유가 무엇인가요?
                     equation += currentInput; // 연산식 완성
                     try {
                         // 수식을 계산
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             .replace(/✖️/g, "*")
                             .replace(/➗/g, "/");
                         const result = eval(evaluatedEquation); // 수식을 계산
-                        history = `${equation} = ${result}`; // 계산 기록 저장??? ``의 의미가 뭘까.
+                        history = `${equation} = ${result}`;
                         outputDisplay.textContent = result; // 결과 표시
                         equationDisplay.textContent = equation + " ="; // 연산식 표시
                         equation = ""; // 연산식 초기화
@@ -69,10 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentInput = ""; // 입력 초기화
                 outputDisplay.textContent = "0"; // 결과 초기화
                 equationDisplay.textContent = ""; // 화면 초기화
-                historyVisible = false; // 히스토리 숨김???? 왜 굳이 이떄만 이 코드를 넣는거지지
+                historyVisible = false; //Q. historyVisible = false; 를 굳이 이때만 조정하는 이유가 무엇인가요?
             } else if (value === "( )") {
-                // 괄호 처리파트????? 로직을 잘 모르겠음
-                if (equation.endsWith("(") || currentInput === "") {
+                //Q. 괄호가 제대로 열리고 닫히며, 어떤 조건을 넣어야 하나요? 
+                if (equation.endsWith(")") || currentInput === "") {
                     equation += "("; // 여는 괄호 추가
                 } else {
                     equation += currentInput + "("; // 괄호 추가
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     currentInput = currentInput.slice(0, -1); // 마지막 문자 제거
                     outputDisplay.textContent = currentInput || "0"; // 빈 문자열이면 0 표시
                 } else if (equation !== "") {
-                    // 현재 입력 값이 없을 경우, 연산식에서 제거??? 굳이 해야함?? 이 이래로 이해가 안감.
+                    // Q. 이 파트 로직과 기능어를 이해하기 어렵습니다...
                     equation = equation.trimEnd(); // 끝의 공백 제거
                     if (equation.endsWith("+") || equation.endsWith("-") || equation.endsWith("*") || equation.endsWith("/")) {
                         equation = equation.slice(0, -2); // 연산자를 제거
