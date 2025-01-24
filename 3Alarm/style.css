@@ -1,0 +1,101 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    width: 500px;
+    height: 230px;
+    padding: 20px;
+    background-color: #f4f6ff;
+    border: 6px solid #d1d1d1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333333;
+  }
+  
+  .battery {
+    font-weight: bold;
+  }
+  
+  .sb {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+
+  }
+  
+  .label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;// 소용이 없는 이유
+    color: #333333;
+  }
+  
+  .time-display {
+    width: 90%;
+    height: 50%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+  }
+  
+  .status-display {
+    width: 90%;
+    height: 50%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    overflow-y: auto;
+  }
+  
+  .alarm-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sbbb{
+    
+  }
+  .control-button {
+    padding: 4px 10px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .control-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .control-select {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    flex-grow: 1;
+  }
+  

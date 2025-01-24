@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Alarm Clock</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <!-- 배터리 상태 -->
+      <span id="battery-status">배터리: 100%</span>
+    </div>
+
+    <div class="sb">
+      <div>
+        <!-- 현재 시간 -->
+        <label class="label">시간</label>
+        <div id="current-time" class="time-display">2025-12-01 11:23:42</div>
+      </div>
+      <div>
+        <!-- 알람 상태 -->
+        <label class="label">알림 현황</label>
+        <div id="alarm-status" class="status-display">알람 없음</div>
+      </div>
+    </div>
+
+    <div class="alarm-controls">
+      <div>
+        <!-- 알람 설정 -->
+        <label class="label">알람</label>
+        <div>
+          <select id="hour" class="control-select">
+            <option value="">시</option>
+            <option value="0">17</option>
+            <option value="1">21</option>
+            <option value="2">22</option>
+          </select> : 
+          <select id="minute" class="control-select">
+            <option value="">분</option>
+            <option value="0">06</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+          </select> : 
+          <select id="second" class="control-select">
+            <option value="">초</option>
+            <option value="0">00</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+          </select>
+          <button id="add-alarm-button" class="control-button">추가</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
