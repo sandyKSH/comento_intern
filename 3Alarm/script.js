@@ -29,33 +29,34 @@ function decreaseBattery() {
 
 // 알람 추가 함수
 function addAlarm() {
-  if (alarms.length >= 3) {
-    alert("최대 3개의 알람만 추가할 수 있습니다.");
-    return;
-  }
-
+  
   // 시, 분, 초 선택 값 가져오기
   const hour = document.getElementById("hour").value;
   const minute = document.getElementById("minute").value;
   const second = document.getElementById("second").value;
 
-  // 선택되지 않은 값이 있으면 경고
-  if (hour === "" || minute === "" || second === "") {
-    alert("시/분/초를 모두 선택해주세요.");
-    return;
-  }
-
   // 새 알람 추가
   const newAlarm = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:${String(second).padStart(2, "0")}`;
+  
+  //중복 알람 체크
+  if (alarms.includes(newAlarm)) {
+    alert("해당 알람이 이미 설정되어 있습니다.");
+    return;
+  }
   alarms.push(newAlarm);
 
-  // 알람 상태 업데이트
+  // 알람 상태 표시
   alarmStatus.textContent = alarms.join(", ") || "알람 없음";
 }
 
 
 //적절한 알람 설정인지 확인
 function setAlarmHandler() {
+  const MAX_ALARMS = 3;
+  if (alarms.length >= MAX_ALARMS) {
+    alert("최대 3개의 알람만 추가할 수 있습니다.");
+    return false;
+  }
   const hour = document.getElementById("hour").value;
   const minute = document.getElementById("minute").value;
   const second = document.getElementById("second").value;
@@ -66,11 +67,10 @@ function setAlarmHandler() {
     minute < 0 || minute > 59 ||
     second < 0 || second > 59
   ) {
-    alert("유효한 시/분/초 값을 입력해주세요.");
-    return;
+    alert("유효한 시/분/초 값을 모두 입력해주세요.");
+    return false;
   }
-
-  alert(`알람이 설정되었습니다: ${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:${second.padStart(2, '0')}`);
+  return true;
 }
 
 // 현재 시간과 알람을 비교하여 알람이 작동하면 경고
@@ -84,7 +84,7 @@ function checkAlarms() {
   if (alarms.includes(currentTime)) {
     alert(`알람! 현재 시각: ${currentTime}`);
     alarms.splice(alarms.indexOf(currentTime), 1); // 알람 제거
-    alarmStatus.textContent = alarms.join(", ") || "알람 없음";
+    alarmStatus.textContent = alarms.join(", ") || "알람 없음"; // 재정비. 업데이트
   }
 }
 
@@ -97,6 +97,7 @@ setInterval(() => {
 
 // 알람 추가 버튼 누르면 실행할 것들
 document.getElementById("add-alarm-button").addEventListener("click", () => {
-  addAlarm(); // 첫 번째 함수 실행
-  setAlarmHandler(); // 두 번째 함수 실행
+  if (setAlarmHandler()){ // 두 번째 함수 실행
+    addAlarm(); // 첫 번째 함수 실행
+  }; 
 });
