@@ -29,28 +29,14 @@
     <div class="alarm-controls">
       <div>
         <!-- 알람 설정 -->
-        <label class="label">알람</label>
+        <label class="label">알람 예약</label>
         <div>
-          <select id="hour" class="control-select">
-            <option value="">시</option>
-            <option value="0">17</option>
-            <option value="1">21</option>
-            <option value="2">22</option>
-          </select> : 
-          <select id="minute" class="control-select">
-            <option value="">분</option>
-            <option value="0">06</option>
-            <option value="1">01</option>
-            <option value="2">02</option>
-          </select> : 
-          <select id="second" class="control-select">
-            <option value="">초</option>
-            <option value="0">00</option>
-            <option value="1">01</option>
-            <option value="2">02</option>
-            <option value="3">03</option>
-          </select>
-          <button id="add-alarm-button" class="control-button">추가</button>
+            <input id="hour" type="number" class="time-input" placeholder="시" min="0" max="23" />
+            :
+            <input id="minute" type="number" class="time-input" placeholder="분" min="0" max="59" />
+            :
+            <input id="second" type="number" class="time-input" placeholder="초" min="0" max="59" />
+            <button id="add-alarm-button" class="control-button">추가</button>
         </div>
       </div>
     </div>

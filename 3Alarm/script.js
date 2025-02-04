@@ -20,7 +20,7 @@ function decreaseBattery() {
     batteryStatus.textContent = `배터리: ${batteryLevel}%`;
   }
 
-  // 배터리가 0%일 때 시간 표시 숨기기
+  // 배터리가 0%일 때 시간 표시 블랙처리
   if (batteryLevel === 0) {
     currentTimeDisplay.style.backgroundColor = "black";
     currentTimeDisplay.style.color = "black";
@@ -53,6 +53,26 @@ function addAlarm() {
   alarmStatus.textContent = alarms.join(", ") || "알람 없음";
 }
 
+
+//적절한 알람 설정인지 확인
+function setAlarmHandler() {
+  const hour = document.getElementById("hour").value;
+  const minute = document.getElementById("minute").value;
+  const second = document.getElementById("second").value;
+
+  if (
+    hour === "" || minute === "" || second === "" ||
+    hour < 0 || hour > 23 ||
+    minute < 0 || minute > 59 ||
+    second < 0 || second > 59
+  ) {
+    alert("유효한 시/분/초 값을 입력해주세요.");
+    return;
+  }
+
+  alert(`알람이 설정되었습니다: ${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:${second.padStart(2, '0')}`);
+}
+
 // 현재 시간과 알람을 비교하여 알람이 작동하면 경고
 function checkAlarms() {
   const now = new Date();
@@ -75,5 +95,8 @@ setInterval(() => {
   checkAlarms();
 }, 1000);
 
-// 알람 추가 버튼 이벤트 리스너
-document.getElementById("add-alarm-button").addEventListener("click", addAlarm);
+// 알람 추가 버튼 누르면 실행할 것들
+document.getElementById("add-alarm-button").addEventListener("click", () => {
+  addAlarm(); // 첫 번째 함수 실행
+  setAlarmHandler(); // 두 번째 함수 실행
+});

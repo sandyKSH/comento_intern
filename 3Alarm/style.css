@@ -89,13 +89,3 @@ body {
     background-color: #0056b3;
   }
   
-  .control-select {
-    padding: 5px 10px;
-    font-size: 14px;
-    color: #333333;
-    background-color: #ffffff;
-    border: 1px solid #d1d1d1;
-    border-radius: 5px;
-    flex-grow: 1;
-  }
-  
