@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 체크박스 클릭 시 줄긋기
         checkbox.addEventListener("change", () => {
-            listItem.style.textDecoration = checkbox.checked ? "line-through" : "none";
+            taskSpan.style.textDecoration = checkbox.checked ? "line-through" : "none";
         });
 
         // 삭제 버튼 클릭 시 목록에서 제거

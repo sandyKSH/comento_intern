@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { username: "user1", password: "pass123" },
         { username: "test123", password: "test456" }
     ];
-    // 회원가입 이벤트
+    // 회원가입
     signupForm.addEventListener("submit", (event) => {
         // 입력한 데이터가 사라지지 않도록 새로고침 막기
         event.preventDefault();
@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // 2. 아이디 길이 체크 (4자 이상)
         if (username.length < 4) {
-            usernameError.textContent = "사용자명은 4 자 이상이어야 합니다.";
+            usernameError.textContent = "사용자명은 4자 이상이어야 합니다.";
             return;
         }
         // 3. 비밀번호 길이 체크 (6자 이상)
         if (password.length < 6) {
-            passwordError.textContent = "비밀번호는 6 자 이상이어야 합니다.";
+            passwordError.textContent = "비밀번호는 6자 이상이어야 합니다.";
             return;
         }
         // 4. 비밀번호 조합 체크 (영문 + 숫자)
